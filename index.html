@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manam – mental wellbeing for men and women</title>
+<meta name="description" content="Check in with yourself, understand what you’re feeling, and find free mental health help in India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F1F3F8;
+  --surface: #FFFFFF;
+  --surface-2: #E6EAF3;
+  --ink: #1F2850;
+  --ink-soft: #4A5378;
+  --line: #CDD3E3;
+  --accent: #D9971C;
+  --accent-soft: #FBEBC8;
+  --accent-ink: #5C3B00;
+  --calm: #2F6E73;
+  --calm-soft: #DCEDEC;
+  --alert: #A33A2F;
+  --alert-soft: #F8E1DD;
+  --focus: #2F55D4;
+  --chat-bg: #E6F0EE;
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 28px;
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141A30;
+    --surface: #1C2442;
+    --surface-2: #252F54;
+    --ink: #E9ECF6;
+    --ink-soft: #B3BAD3;
+    --line: #36416B;
+    --accent: #F0B43C;
+    --accent-soft: #3A3220;
+    --accent-ink: #FBE3AE;
+    --calm: #7CC3C6;
+    --calm-soft: #1D3940;
+    --alert: #F09A8E;
+    --alert-soft: #43241F;
+    --focus: #9DB4FF;
+    --chat-bg: #17263A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141A30;
+  --surface: #1C2442;
+  --surface-2: #252F54;
+  --ink: #E9ECF6;
+  --ink-soft: #B3BAD3;
+  --line: #36416B;
+  --accent: #F0B43C;
+  --accent-soft: #3A3220;
+  --accent-ink: #FBE3AE;
+  --calm: #7CC3C6;
+  --calm-soft: #1D3940;
+  --alert: #F09A8E;
+  --alert-soft: #43241F;
+  --focus: #9DB4FF;
+  --chat-bg: #17263A;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--surface);
+}
+img, svg { max-width: 100%; }
+a { color: var(--calm); text-underline-offset: 3px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; margin: 0 0 .6em; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: .7rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: .45rem;
+}
+.brand small { font-family: var(--sans); font-size: .85rem; font-weight: 400; color: var(--ink-soft); }
+.help-now {
+  margin-left: auto;
+  background: var(--alert);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: .55rem 1.1rem;
+  font: 700 .95rem var(--sans);
+  cursor: pointer;
+  white-space: nowrap;
+}
+:root[data-theme="dark"] .help-now { color: #1C1010; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .help-now { color: #1C1010; } }
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem .55rem;
+  display: flex;
+  gap: .25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  flex: none;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  font-size: .95rem;
+}
+.nav a[aria-current="page"] { background: var(--ink); color: var(--surface); }
+.nav a:hover:not([aria-current="page"]) { background: var(--surface-2); color: var(--ink); }
+
+/* Layout */
+main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+.view[hidden] { display: none; }
+.reading { max-width: 720px; }
+.lede { font-size: 1.2rem; color: var(--ink-soft); max-width: 640px; }
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.note {
+  background: var(--calm-soft);
+  border-radius: var(--radius-m);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.note.alert { background: var(--alert-soft); }
+.note.alert strong { color: var(--alert); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--surface);
+  border-radius: 999px;
+  padding: .65rem 1.3rem;
+  font: 700 1rem var(--sans);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.accent { background: var(--accent); border-color: var(--accent); color: #2A1B00; }
+.btn.small { padding: .4rem .9rem; font-size: .9rem; }
+.btn.danger { background: transparent; border-color: var(--alert); color: var(--alert); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+.muted { color: var(--ink-soft); }
+.small-text { font-size: .9rem; }
+
+/* Home hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1.5rem 0 3rem;
+}
+.hero h1 { margin-bottom: .4em; }
+.breath {
+  position: relative;
+  aspect-ratio: 1;
+  width: min(100%, 380px);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+.breath-ring {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-soft) 0%, var(--accent-soft) 55%, transparent 56%);
+  border: 3px solid var(--accent);
+  animation: breathe 10s ease-in-out infinite;
+}
+.breath-ring.outer {
+  inset: 0;
+  background: none;
+  border: 1px dashed var(--line);
+  animation: none;
+}
+.breath-words { position: relative; font-family: var(--serif); font-size: 1.35rem; color: var(--accent-ink); text-align: center; }
+.breath-words span { display: block; animation: wordIn 10s ease-in-out infinite; }
+.breath-words span + span { position: absolute; inset: 0; animation-name: wordOut; }
+@keyframes breathe { 0%, 100% { transform: scale(.62); } 45%, 55% { transform: scale(1); } }
+@keyframes wordIn { 0%, 40% { opacity: 1; } 50%, 90% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes wordOut { 0%, 40% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
+
+.doors { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2.5rem; }
+.door {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.door:hover { border-color: var(--ink); }
+.door h2 { margin-bottom: .3em; }
+.door ul { margin: .5rem 0 0; padding-left: 1.1rem; color: var(--ink-soft); }
+.door .go { display: inline-block; margin-top: 1rem; font-weight: 700; color: var(--calm); }
+.door.men { border-top: 6px solid var(--calm); }
+.door.women { border-top: 6px solid var(--accent); }
+.quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.quick a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 1.1rem 1.25rem;
+  border-left: 3px solid var(--line);
+}
+.quick a:hover { border-left-color: var(--accent); }
+.quick strong { display: block; font-family: var(--serif); font-size: 1.2rem; margin-bottom: .2rem; }
+.quick span { color: var(--ink-soft); font-size: .95rem; }
+.trust { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .95rem; max-width: 720px; }
+
+/* Forms */
+fieldset { border: 0; padding: 0; margin: 0 0 1.5rem; }
+legend { font-weight: 700; margin-bottom: .6rem; font-size: 1.05rem; padding: 0; }
+label { font-weight: 700; display: block; margin-bottom: .35rem; }
+input[type="text"], input[type="number"], textarea, select {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  padding: .6rem .75rem;
+}
+textarea { min-height: 96px; resize: vertical; }
+.field { margin-bottom: 1.1rem; }
+.hint { font-weight: 400; color: var(--ink-soft); font-size: .9rem; }
+.choice-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.choice span {
+  display: inline-block;
+  padding: .5rem .95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 400;
+  cursor: pointer;
+}
+.choice input:checked + span { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.choice input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.mood .choice span { min-width: 6.5rem; text-align: center; }
+.form-msg { min-height: 1.5em; font-weight: 700; }
+.form-msg.ok { color: var(--calm); }
+.form-msg.err { color: var(--alert); }
+
+/* Chart + lists */
+.chart-wrap { overflow-x: auto; }
+.chart text { fill: var(--ink-soft); font-family: var(--sans); font-size: 12px; }
+.entries { list-style: none; padding: 0; margin: 0; }
+.entries li { padding: .9rem 0; border-top: 1px solid var(--line); display: flex; gap: 1rem; align-items: flex-start; }
+.entries li:first-child { border-top: 0; }
+.entries .when { min-width: 6.5rem; color: var(--ink-soft); font-size: .95rem; }
+.entries .what { flex: 1; }
+.tag { display: inline-block; font-size: .8rem; padding: .1rem .55rem; border-radius: 999px; background: var(--surface-2); margin: .15rem .2rem 0 0; }
+.icon-btn { border: 0; background: none; color: var(--ink-soft); cursor: pointer; font: inherit; text-decoration: underline; padding: .2rem; }
+
+/* Self-check */
+.tabs { display: flex; gap: .5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.tabs button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: .5rem 1.1rem;
+  font: 700 1rem var(--sans);
+  cursor: pointer;
+}
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.q { padding: 1rem 0; border-top: 1px solid var(--line); }
+.q:first-of-type { border-top: 0; }
+.q p { margin-bottom: .6rem; }
+.q .num { color: var(--ink-soft); margin-right: .35rem; }
+.q.missing p { color: var(--alert); }
+.score-big { font-family: var(--serif); font-size: 3rem; line-height: 1; }
+.meter { height: 10px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin: .75rem 0 1rem; }
+.meter i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+
+/* Tools */
+.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.box-breath { display: grid; place-items: center; padding: 1rem 0; }
+.box-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--calm-soft);
+  border: 3px solid var(--calm);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transform: scale(.6);
+  transition: transform 4s ease-in-out;
+}
+.box-circle strong { font-family: var(--serif); font-size: 1.3rem; display: block; }
+.box-circle span { font-size: 2rem; font-family: var(--serif); }
+.steps-list { padding-left: 1.2rem; }
+.ground-step { font-family: var(--serif); font-size: 1.4rem; margin: .5rem 0 1rem; }
+.progress-dots { display: flex; gap: .4rem; margin-bottom: 1rem; }
+.progress-dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.progress-dots i.on { background: var(--calm); }
+.msg-out {
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-s);
+  padding: 1rem;
+  white-space: pre-wrap;
+  margin: 1rem 0;
+}
+
+/* Men / women pages */
+.page-head { max-width: 760px; margin-bottom: 2rem; }
+.two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; }
+.two-col > *, .tool-grid > *, .doors > *, .hero > * { min-width: 0; }
+.signs { columns: 2; column-gap: 2rem; padding-left: 1.1rem; }
+.signs li { break-inside: avoid; margin-bottom: .5rem; }
+.script {
+  border-left: 4px solid var(--accent);
+  padding: .25rem 0 .25rem 1rem;
+  margin: 1rem 0;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+}
+.load-list { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 1.5rem; }
+.load-list li { break-inside: avoid; margin-bottom: .35rem; }
+.load-list label { font-weight: 400; display: flex; gap: .55rem; align-items: flex-start; margin: 0; cursor: pointer; }
+.load-list input { margin-top: .35rem; width: 1.1rem; height: 1.1rem; accent-color: var(--accent); flex: none; }
+.load-count { font-family: var(--serif); font-size: 1.4rem; margin: 1rem 0 .5rem; }
+.stage { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.stage:first-of-type { border-top: 0; }
+.stage h3 { margin-bottom: .35rem; }
+
+/* Help */
+.lines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 1.5rem 0 2rem; }
+.line-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 1.25rem; }
+.line-card .num { font-family: var(--serif); font-size: 2.1rem; display: block; color: var(--ink); text-decoration: none; line-height: 1.1; margin: .3rem 0 .4rem; }
+.line-card.urgent { border: 2px solid var(--alert); }
+
+/* Dialog */
+dialog {
+  border: 0;
+  border-radius: var(--radius-l);
+  padding: 0;
+  max-width: 520px;
+  width: calc(100% - 2rem);
+  background: var(--surface);
+  color: var(--ink);
+}
+dialog::backdrop { background: rgba(10, 14, 30, .55); }
+.dlg { padding: 1.75rem; }
+.dlg h2 { font-size: 1.6rem; }
+.call-list { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: .75rem; }
+.call-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: .9rem 1.1rem;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+}
+.call-list a strong { font-family: var(--serif); font-size: 1.4rem; white-space: nowrap; }
+.call-list a.first { border: 2px solid var(--alert); }
+
+footer.site-footer { border-top: 1px solid var(--line); background: var(--surface); }
+footer .inner { max-width: 1100px; margin: 0 auto; padding: 1.75rem 1.25rem; color: var(--ink-soft); font-size: .9rem; }
+footer .inner p { max-width: 760px; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 1rem; }
+  .breath { width: min(78%, 300px); grid-row: 1; }
+  .doors, .tool-grid, .two-col { grid-template-columns: 1fr; }
+  .quick { grid-template-columns: 1fr; }
+  .lines { grid-template-columns: 1fr; }
+  .signs, .load-list { columns: 1; }
+}
+@media (max-width: 520px) {
+  .brand small { display: none; }
+  main { padding-top: 1.25rem; }
+  .panel { padding: 1.15rem; }
+  .entries li { flex-direction: column; gap: .2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breath-ring { animation: none; transform: scale(.85); }
+  .breath-words span { animation: none; }
+  .breath-words span + span { display: none; }
+  .box-circle { transition: none; }
+}
+
+
+/* Voice mode */
+.modes { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 3px; margin-left: auto; }
+.modes button { border: 0; background: none; color: var(--ink-soft); font: 700 .9rem var(--sans); padding: .35rem .85rem; border-radius: 999px; cursor: pointer; }
+.modes button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.chat-head .icon-btn { margin-left: .5rem; }
+.voice { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; padding: 1rem 1.25rem .75rem; gap: .6rem; text-align: center; }
+.face { position: relative; width: 168px; height: 168px; flex: none; }
+.face svg { width: 100%; height: 100%; overflow: visible; }
+.face .ring { fill: none; stroke: var(--calm); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.face.listening .ring { animation: ring 1.6s ease-out infinite; }
+.face.listening .ring.r2 { animation-delay: .8s; }
+@keyframes ring { 0% { opacity: .7; transform: scale(.82); } 100% { opacity: 0; transform: scale(1.12); } }
+.face .mouth { transform-box: fill-box; transform-origin: center; transition: transform .2s; }
+.face.speaking .mouth { animation: talk .32s ease-in-out infinite alternate; }
+@keyframes talk { from { transform: scaleY(.35); } to { transform: scaleY(1.25); } }
+.face .eye { transform-box: fill-box; transform-origin: center; animation: blink 6s infinite; }
+.face.thinking .pupils { animation: look 1.6s ease-in-out infinite alternate; }
+@keyframes look { from { transform: translateX(-4px) translateY(-3px); } to { transform: translateX(4px) translateY(-3px); } }
+.face.listening .head { stroke: var(--accent); }
+.v-status { font-weight: 700; margin: 0; min-height: 1.5em; }
+.captions { flex: 1; min-height: 60px; width: 100%; max-width: 560px; overflow-y: auto; display: flex; flex-direction: column; gap: .5rem; }
+.cap-you { color: var(--ink-soft); font-style: italic; margin: 0; }
+.cap-bot { font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; text-align: left; }
+.cap-bot p { margin: 0 0 .4em; }
+.cap-bot ul, .cap-bot ol { margin: .2rem 0 .4rem; padding-left: 1.2rem; }
+.mic {
+  width: 76px; height: 76px; border-radius: 50%; flex: none;
+  border: 0; background: var(--calm); color: #fff; cursor: pointer;
+  display: grid; place-items: center; box-shadow: 0 4px 14px rgba(47,110,115,.35);
+}
+:root[data-theme="dark"] .mic { color: #10221F; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mic { color: #10221F; } }
+.mic svg { width: 32px; height: 32px; }
+.mic.on { background: var(--accent); color: #2A1B00; }
+.mic:disabled { opacity: .5; cursor: wait; }
+.v-type { display: flex; gap: .5rem; width: 100%; max-width: 560px; }
+.v-type input { flex: 1; min-width: 0; }
+details.v-settings { width: 100%; max-width: 560px; text-align: left; font-size: .92rem; }
+details.v-settings summary { cursor: pointer; color: var(--ink-soft); }
+.v-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .5rem; }
+.v-grid label { font-size: .85rem; }
+.v-grid .check { grid-column: 1 / -1; display: flex; gap: .5rem; align-items: center; font-weight: 400; }
+.v-crisis .crisis-card { text-align: left; }
+@media (max-width: 520px) {
+  .face { width: 120px; height: 120px; }
+  .mic { width: 68px; height: 68px; }
+  .modes button { padding: .3rem .65rem; }
+  .chat-head { gap: .5rem; padding: .7rem .8rem; }
+  .chat-head h1 { font-size: 1.15rem; }
+  .chat-head > .avatar { display: none; }
+  .chat-head .icon-btn { margin-left: .25rem; font-size: .9rem; }
+  .v-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .face .ring, .face .mouth, .face .pupils, .face .eye { animation: none !important; }
+  .face.listening .ring { opacity: .6; }
+}
+
+/* Thunai */
+.avatar { width: 40px; height: 40px; flex: none; }
+.avatar.big { width: 64px; height: 64px; }
+.avatar .eye { transform-box: fill-box; transform-origin: center; animation: blink 6s infinite; }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+.thunai-band {
+  display: flex; gap: 1.25rem; align-items: center;
+  background: var(--calm-soft); border-radius: var(--radius-l);
+  padding: 1.5rem 1.75rem; margin-bottom: 2rem;
+  text-decoration: none; color: var(--ink);
+}
+.thunai-band h2 { margin: 0 0 .25rem; font-size: 1.6rem; }
+.thunai-band p { margin: 0; color: var(--ink-soft); }
+.thunai-band .go { font-weight: 700; color: var(--calm); display: inline-block; margin-top: .5rem; }
+.talk-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.5rem; align-items: start; }
+.talk-wrap > * { min-width: 0; }
+.chat {
+  background: var(--chat-bg); border: 1px solid var(--line); border-radius: var(--radius-l);
+  display: flex; flex-direction: column; height: min(74vh, 780px); min-height: 480px; overflow: hidden;
+}
+.chat-head { display: flex; align-items: center; gap: .85rem; padding: .9rem 1.25rem; border-bottom: 1px solid var(--line); background: var(--surface); }
+.chat-head h1 { font-size: 1.35rem; margin: 0; }
+.chat-head p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+.chat-head .icon-btn { margin-left: auto; white-space: nowrap; }
+.log { flex: 1; overflow-y: auto; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overscroll-behavior: contain; }
+.msg { display: flex; gap: .6rem; align-items: flex-end; max-width: 88%; }
+.msg.me { align-self: flex-end; flex-direction: row-reverse; }
+.bubble { padding: .75rem 1rem; border-radius: 18px; line-height: 1.55; overflow-wrap: anywhere; }
+.msg.bot .bubble { background: var(--surface); border: 1px solid var(--line); border-bottom-left-radius: 6px; }
+.msg.me .bubble { background: var(--ink); color: var(--surface); border-bottom-right-radius: 6px; white-space: pre-wrap; }
+.bubble p { margin: 0 0 .55em; }
+.bubble p:last-child { margin-bottom: 0; }
+.bubble ul, .bubble ol { margin: .25rem 0 .55rem; padding-left: 1.2rem; }
+.bubble li { margin-bottom: .2rem; }
+.bubble .meta { display: block; margin-top: .4rem; font-size: .85rem; color: var(--ink-soft); }
+.typing { display: inline-flex; gap: 5px; align-items: center; padding: .3rem 0; }
+.typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-soft); animation: dot 1.2s infinite ease-in-out; }
+.typing i:nth-child(2) { animation-delay: .15s; }
+.typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes dot { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.starters { display: flex; flex-wrap: wrap; gap: .5rem; margin-left: calc(40px + .6rem); }
+.starters button {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 999px; padding: .45rem .9rem; font: inherit; font-size: .95rem; cursor: pointer;
+}
+.starters button:hover { border-color: var(--calm); }
+.composer { border-top: 1px solid var(--line); background: var(--surface); padding: .75rem; display: flex; gap: .6rem; align-items: flex-end; }
+.composer textarea { min-height: 48px; max-height: 160px; resize: none; border-radius: 16px; line-height: 1.45; }
+.composer .btn { flex: none; }
+.chat-note { font-size: .85rem; color: var(--ink-soft); padding: 0 1rem .75rem; background: var(--surface); margin: 0; }
+.crisis-card { align-self: stretch; background: var(--alert-soft); border-radius: var(--radius-m); padding: .9rem 1.1rem; }
+.crisis-card strong { color: var(--alert); }
+.crisis-card a { font-weight: 700; }
+.chat-off { padding: 1rem 1.25rem; background: var(--surface); border-top: 1px solid var(--line); }
+@media (max-width: 860px) {
+  .talk-wrap { grid-template-columns: 1fr; }
+  .chat { height: calc(100dvh - 150px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); min-height: 440px; }
+  main:has(> .view[data-view="talk"]:not([hidden])) { padding-top: .75rem; }
+  .thunai-band { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .msg { max-width: 96%; }
+  .starters { margin-left: 0; }
+  .chat-head p { display: none; }
+  .composer .btn { padding: .65rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .avatar .eye, .typing i { animation: none; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home">Manam <small>மனம்</small></a>
+    <button class="help-now" type="button" data-open-help>Need help now</button>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="#home">Home</a>
+    <a href="#talk">Talk to Thunai</a>
+    <a href="#checkin">Daily check-in</a>
+    <a href="#selfcheck">Self-check</a>
+    <a href="#tools">Calm tools</a>
+    <a href="#men">For men</a>
+    <a href="#women">For women</a>
+    <a href="#help">Get help</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HOME -->
+<section class="view" data-view="home" aria-labelledby="home-title">
+  <div class="hero">
+    <div>
+      <h1 id="home-title">How are you, really?</h1>
+      <p class="lede">A quiet place to check in with yourself, understand what you’re feeling, and find free help in India when you need it. No sign-up. What you write stays on this device.</p>
+      <div class="row">
+        <a class="btn" href="#talk">Talk to Thunai</a>
+        <a class="btn ghost" href="#checkin">Check in now</a>
+      </div>
+    </div>
+    <div class="breath" aria-hidden="true">
+      <div class="breath-ring outer"></div>
+      <div class="breath-ring"></div>
+      <div class="breath-words"><span>Breathe in</span><span>Breathe out</span></div>
+    </div>
+  </div>
+
+  <a class="thunai-band" href="#talk">
+    <svg class="avatar big" viewBox="0 0 64 64" aria-hidden="true"><line x1="32" y1="15" x2="32" y2="7" stroke="var(--calm)" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="6" r="4" fill="var(--accent)"/><rect x="9" y="15" width="46" height="38" rx="17" fill="var(--calm-soft)" stroke="var(--calm)" stroke-width="3"/><ellipse class="eye" cx="24" cy="32" rx="3.6" ry="4.6" fill="var(--ink)"/><ellipse class="eye" cx="40" cy="32" rx="3.6" ry="4.6" fill="var(--ink)"/><path d="M25 42 Q32 47 39 42" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="39" r="3" fill="var(--accent)" opacity=".55"/><circle cx="48" cy="39" r="3" fill="var(--accent)" opacity=".55"/></svg>
+    <div>
+      <h2>Meet Thunai, your companion</h2>
+      <p>Share what’s on your mind — a savings goal, loan worries, no job, work pressure or just a heavy day. Thunai listens first, then helps you plan small, practical steps. English, Tamil or Tanglish.</p>
+      <span class="go">Start a conversation</span>
+    </div>
+  </a>
+
+  <div class="doors">
+    <a class="door men" href="#men">
+      <h2>For men</h2>
+      <p class="muted">When “I’m fine” isn’t true.</p>
+      <ul>
+        <li>Signs of stress that hide as anger or overwork</li>
+        <li>Money, job and family pressure</li>
+        <li>How to start a hard conversation</li>
+      </ul>
+      <span class="go">Open the men’s page</span>
+    </a>
+    <a class="door women" href="#women">
+      <h2>For women</h2>
+      <p class="muted">For the mind carrying everyone else.</p>
+      <ul>
+        <li>The mental load at home, made visible</li>
+        <li>Mood across periods, pregnancy and menopause</li>
+        <li>Burnout and asking for support</li>
+      </ul>
+      <span class="go">Open the women’s page</span>
+    </a>
+  </div>
+
+  <div class="quick">
+    <a href="#selfcheck"><strong>2-minute self-check</strong><span>Two questionnaires doctors use for low mood and anxiety.</span></a>
+    <a href="#checkin"><strong>Daily check-in</strong><span>Track mood, sleep and energy in 30 seconds and see your pattern.</span></a>
+    <a href="#tools"><strong>Calm tools</strong><span>Guided breathing, grounding and a thought reframe worksheet.</span></a>
+  </div>
+
+  <p class="trust">Manam gives information and self-help tools. It is not a diagnosis or a replacement for a doctor or counsellor. If you are in danger or thinking about ending your life, call <a href="tel:112">112</a> or Tele-MANAS on <a href="tel:14416">14416</a> now.</p>
+</section>
+
+<!-- TALK -->
+<section class="view" data-view="talk" aria-labelledby="talk-title" hidden>
+  <div class="talk-wrap">
+    <div class="chat">
+      <div class="chat-head">
+        <svg class="avatar" viewBox="0 0 64 64" aria-hidden="true"><line x1="32" y1="15" x2="32" y2="7" stroke="var(--calm)" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="6" r="4" fill="var(--accent)"/><rect x="9" y="15" width="46" height="38" rx="17" fill="var(--calm-soft)" stroke="var(--calm)" stroke-width="3"/><ellipse class="eye" cx="24" cy="32" rx="3.6" ry="4.6" fill="var(--ink)"/><ellipse class="eye" cx="40" cy="32" rx="3.6" ry="4.6" fill="var(--ink)"/><path d="M25 42 Q32 47 39 42" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="39" r="3" fill="var(--accent)" opacity=".55"/><circle cx="48" cy="39" r="3" fill="var(--accent)" opacity=".55"/></svg>
+        <div>
+          <h1 id="talk-title">Thunai</h1>
+          <p>துணை, your companion</p>
+        </div>
+        <div class="modes" role="group" aria-label="How to talk to Thunai">
+          <button type="button" id="mode-talk" aria-pressed="true">Talk</button>
+          <button type="button" id="mode-type" aria-pressed="false">Type</button>
+        </div>
+        <button class="icon-btn" type="button" id="chat-clear">New chat</button>
+      </div>
+      <div class="voice" id="voice">
+        <div class="face idle" id="face" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <circle class="ring" cx="100" cy="108" r="92"/>
+            <circle class="ring r2" cx="100" cy="108" r="92"/>
+            <line x1="100" y1="44" x2="100" y2="22" stroke="var(--calm)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="100" cy="18" r="9" fill="var(--accent)"/>
+            <rect class="head" x="30" y="44" width="140" height="124" rx="54" fill="var(--calm-soft)" stroke="var(--calm)" stroke-width="6"/>
+            <g class="pupils">
+              <ellipse class="eye" cx="74" cy="98" rx="10" ry="13" fill="var(--ink)"/>
+              <ellipse class="eye" cx="126" cy="98" rx="10" ry="13" fill="var(--ink)"/>
+            </g>
+            <ellipse class="mouth" cx="100" cy="134" rx="16" ry="7" fill="var(--ink)"/>
+            <circle cx="56" cy="124" r="9" fill="var(--accent)" opacity=".45"/>
+            <circle cx="144" cy="124" r="9" fill="var(--accent)" opacity=".45"/>
+          </svg>
+        </div>
+        <p class="v-status" id="v-status" role="status" aria-live="polite">Tap the microphone and start talking</p>
+        <div class="captions" id="captions">
+          <p class="cap-you" id="cap-you"></p>
+          <div class="cap-bot" id="cap-bot"></div>
+          <div class="v-crisis" id="v-crisis"></div>
+        </div>
+        <button class="mic" type="button" id="mic" aria-label="Start talking">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+        </button>
+        <form class="v-type" id="v-form" novalidate>
+          <label class="sr-only" for="v-text">Or type to Thunai</label>
+          <input type="text" id="v-text" maxlength="2000" placeholder="Or type here and Thunai will speak">
+          <button class="btn small" type="submit">Send</button>
+        </form>
+        <details class="v-settings">
+          <summary>Voice settings</summary>
+          <div class="v-grid">
+            <div><label for="v-lang">I’ll speak in</label>
+              <select id="v-lang"><option value="en-IN">English</option><option value="ta-IN">தமிழ் (Tamil)</option></select></div>
+            <div><label for="v-voice">Thunai’s voice</label><select id="v-voice"></select></div>
+            <label class="check"><input type="checkbox" id="v-speak" checked> Thunai speaks replies out loud</label>
+            <label class="check"><input type="checkbox" id="v-auto" checked> Keep listening after Thunai finishes speaking</label>
+          </div>
+        </details>
+      </div>
+      <div class="log" id="chat-log" role="log" aria-live="polite" aria-label="Conversation with Thunai"></div>
+      <form class="composer" id="chat-form" novalidate>
+        <label class="sr-only" for="chat-input">Message Thunai</label>
+        <textarea id="chat-input" rows="1" maxlength="4000" placeholder="Type how you feel or what you need help with…"></textarea>
+        <button class="btn" type="submit" id="chat-send">Send</button>
+        <button class="btn ghost" type="button" id="chat-stop" hidden>Stop</button>
+      </form>
+      <p class="chat-note" id="chat-note">Thunai is an AI companion, not a doctor, counsellor or financial advisor. In danger? Call <a href="tel:112">112</a> or Tele-MANAS <a href="tel:14416">14416</a>.</p>
+      <div class="chat-off" id="chat-off" hidden></div>
+    </div>
+    <aside>
+      <div class="panel">
+        <h2 style="font-size:1.3rem">What you can talk about</h2>
+        <ul>
+          <li>Saving for a goal, like a trip or a course</li>
+          <li>Loans, EMIs, credit cards and debt stress</li>
+          <li>Losing a job, job search or work pressure</li>
+          <li>Anxiety, low mood, sleep and overthinking</li>
+          <li>Family, partner and relationship strain</li>
+          <li>Loneliness, or just a heavy day</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2 style="font-size:1.3rem">Your privacy</h2>
+        <p class="muted small-text">Your messages are sent to Claude, an AI by Anthropic, to write Thunai’s replies, using your own Claude account. The first time, you’ll be asked to allow this. The conversation is saved only in this browser, and “New chat” deletes it.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- CHECK-IN -->
+<section class="view" data-view="checkin" aria-labelledby="checkin-title" hidden>
+  <div class="page-head">
+    <h1 id="checkin-title">Daily check-in</h1>
+    <p class="lede">Thirty seconds a day. Over a couple of weeks, you’ll see patterns that are hard to notice in the moment.</p>
+  </div>
+  <div class="two-col">
+    <form class="panel" id="checkin-form" novalidate>
+      <fieldset class="mood">
+        <legend>How is your mood today?</legend>
+        <div class="choice-row" id="mood-choices"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Energy</legend>
+        <div class="choice-row" id="energy-choices"></div>
+      </fieldset>
+      <div class="field">
+        <label for="sleep">Hours of sleep last night</label>
+        <input type="number" id="sleep" min="0" max="24" step="0.5" inputmode="decimal" placeholder="e.g. 6.5">
+      </div>
+      <fieldset>
+        <legend>What’s on your mind? <span class="hint">(pick any)</span></legend>
+        <div class="choice-row" id="tag-choices"></div>
+      </fieldset>
+      <div class="field">
+        <label for="note">A line about today <span class="hint">(optional)</span></label>
+        <textarea id="note" maxlength="1000" placeholder="What made today easier or harder?"></textarea>
+      </div>
+      <div class="row">
+        <button class="btn" type="submit">Save today’s check-in</button>
+      </div>
+      <p class="form-msg" id="checkin-msg" role="status" aria-live="polite"></p>
+    </form>
+    <div>
+      <div class="panel">
+        <h2 style="font-size:1.4rem">Your last 14 days</h2>
+        <div id="low-alert"></div>
+        <div class="chart-wrap" id="mood-chart"></div>
+      </div>
+      <div class="panel">
+        <h2 style="font-size:1.4rem">Recent entries</h2>
+        <ul class="entries" id="entries"></ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Your data</h3>
+    <p class="muted small-text">Check-ins, self-check results and worksheets are saved only in this browser on this device. Nobody else can see them, and they are not sent anywhere. Clearing your browser data also removes them.</p>
+    <button class="btn danger small" type="button" id="delete-all">Delete all my data</button>
+    <p class="form-msg" id="delete-msg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- SELF-CHECK -->
+<section class="view" data-view="selfcheck" aria-labelledby="sc-title" hidden>
+  <div class="page-head">
+    <h1 id="sc-title">Self-check</h1>
+    <p class="lede">Two short questionnaires that doctors use worldwide: the PHQ-9 for low mood and the GAD-7 for anxiety. They take about two minutes each.</p>
+    <p class="muted small-text">These are screening tools, not a diagnosis. Only a doctor or mental health professional can diagnose depression or anxiety.</p>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Choose a questionnaire">
+    <button type="button" role="tab" id="tab-phq9" aria-selected="true" aria-controls="sc-panel" data-test="phq9">Low mood (PHQ-9)</button>
+    <button type="button" role="tab" id="tab-gad7" aria-selected="false" aria-controls="sc-panel" data-test="gad7">Anxiety (GAD-7)</button>
+  </div>
+  <div class="two-col">
+    <form class="panel" id="sc-panel" role="tabpanel" novalidate>
+      <p><strong>Over the last 2 weeks, how often have you been bothered by the following?</strong></p>
+      <div id="sc-questions"></div>
+      <div class="row" style="margin-top:1rem">
+        <button class="btn" type="submit">See my result</button>
+        <button class="btn ghost" type="reset">Clear answers</button>
+      </div>
+      <p class="form-msg err" id="sc-msg" role="alert"></p>
+    </form>
+    <div>
+      <div class="panel" id="sc-result" hidden></div>
+      <div class="panel">
+        <h2 style="font-size:1.4rem">Saved results</h2>
+        <ul class="entries" id="sc-history"></ul>
+      </div>
+    </div>
+  </div>
+  <p class="muted small-text">PHQ-9 and GAD-7 were developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke and colleagues, and are free to use.</p>
+</section>
+
+<!-- TOOLS -->
+<section class="view" data-view="tools" aria-labelledby="tools-title" hidden>
+  <div class="page-head">
+    <h1 id="tools-title">Calm tools</h1>
+    <p class="lede">Small, practical exercises for hard moments. Use whichever one fits right now.</p>
+  </div>
+  <div class="tool-grid">
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Box breathing</h2>
+      <p class="muted">Breathe in for 4, hold for 4, out for 4, hold for 4. Slowing your breath tells your body it is safe.</p>
+      <div class="box-breath">
+        <div class="box-circle" id="box-circle" aria-live="polite">
+          <div><strong id="box-phase">Ready</strong><span id="box-count">4</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" id="box-toggle">Start breathing</button>
+        <span class="muted" id="box-rounds">0 rounds</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-size:1.4rem">5-4-3-2-1 grounding</h2>
+      <p class="muted">When your mind is racing or panicking, bring it back to the room you’re in.</p>
+      <div class="progress-dots" id="ground-dots" aria-hidden="true"></div>
+      <p class="ground-step" id="ground-step" aria-live="polite"></p>
+      <p class="muted" id="ground-help"></p>
+      <div class="row">
+        <button class="btn ghost" type="button" id="ground-back">Back</button>
+        <button class="btn" type="button" id="ground-next">Next</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Thought reframe</h2>
+      <p class="muted">A worksheet from cognitive behavioural therapy (CBT). Write the thought down, then look at it like a fair friend would.</p>
+      <form id="reframe-form" novalidate>
+        <div class="field"><label for="rf-situation">What happened?</label><textarea id="rf-situation" maxlength="1000" placeholder="My manager didn’t reply to my message."></textarea></div>
+        <div class="field"><label for="rf-thought">What went through your mind?</label><textarea id="rf-thought" maxlength="1000" placeholder="I’ve messed up. I’ll lose this job."></textarea></div>
+        <div class="field"><label for="rf-feeling">How strongly did you feel it? <span class="hint" id="rf-feeling-val">50 / 100</span></label><input type="range" id="rf-feeling" min="0" max="100" value="50" style="width:100%"></div>
+        <div class="field"><label for="rf-for">What supports this thought?</label><textarea id="rf-for" maxlength="1000"></textarea></div>
+        <div class="field"><label for="rf-against">What doesn’t fit with it?</label><textarea id="rf-against" maxlength="1000" placeholder="They are often busy on Mondays. Last month they praised my work."></textarea></div>
+        <div class="field"><label for="rf-balanced">A more balanced thought</label><textarea id="rf-balanced" maxlength="1000" placeholder="They’re probably busy. I’ll follow up tomorrow."></textarea></div>
+        <button class="btn" type="submit">Save worksheet</button>
+        <p class="form-msg" id="rf-msg" role="status" aria-live="polite"></p>
+      </form>
+      <h3 style="margin-top:1rem">Saved worksheets</h3>
+      <ul class="entries" id="rf-list"></ul>
+    </div>
+
+    <div class="panel" id="reach-out">
+      <h2 style="font-size:1.4rem">Reach out to someone</h2>
+      <p class="muted">The first message is the hardest. Pick a few options and copy a message to send.</p>
+      <div class="field">
+        <label for="ro-who">Who do you want to message?</label>
+        <select id="ro-who">
+          <option value="friend">A friend</option>
+          <option value="partner">My partner</option>
+          <option value="family">Someone in my family</option>
+          <option value="colleague">A colleague</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>What do you want to say?</legend>
+        <div class="choice-row" id="ro-need"></div>
+      </fieldset>
+      <div class="msg-out" id="ro-out" aria-live="polite"></div>
+      <div class="row">
+        <button class="btn" type="button" id="ro-copy">Copy message</button>
+        <a class="btn ghost" id="ro-wa" href="#" target="_blank" rel="noopener">Open in WhatsApp</a>
+      </div>
+      <p class="form-msg ok" id="ro-msg" role="status" aria-live="polite"></p>
+      <textarea id="ro-fallback" class="sr-only" aria-hidden="true" tabindex="-1"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- MEN -->
+<section class="view" data-view="men" aria-labelledby="men-title" hidden>
+  <div class="page-head">
+    <h1 id="men-title">For men: when “I’m fine” isn’t true</h1>
+    <p class="lede">Many men are taught to handle things alone. So stress often shows up as something else — anger, working nonstop, drinking more, or going quiet. Noticing it is the first step, and talking about it is a strength.</p>
+    <p class="muted small-text">These pages are for anyone. Read whatever fits you.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Signs that are easy to miss</h2>
+      <ul class="signs">
+        <li>Getting angry or irritated quickly</li>
+        <li>Working all the time to avoid thinking</li>
+        <li>Drinking, smoking or gambling more</li>
+        <li>Pulling away from friends and family</li>
+        <li>Headaches, stomach or back pain with no clear cause</li>
+        <li>Sleeping much less or much more</li>
+        <li>Losing interest in things you used to enjoy</li>
+        <li>Taking risks you normally wouldn’t</li>
+        <li>Feeling numb rather than sad</li>
+        <li>Feeling like a burden to others</li>
+      </ul>
+      <p class="muted small-text">If several of these have lasted two weeks or more, take the <a href="#selfcheck">self-check</a> and consider talking to someone.</p>
+    </div>
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Common pressure points</h2>
+      <div class="stage"><h3>Job and career</h3><p class="muted">Fear of layoffs, AI changing your work, long hours, or feeling stuck. Your worth is bigger than your job title.</p></div>
+      <div class="stage"><h3>Money and being the provider</h3><p class="muted">EMIs, debt and supporting family. Writing down the actual numbers and making a plan often feels lighter than carrying the worry.</p></div>
+      <div class="stage"><h3>Loneliness</h3><p class="muted">Many men lose close friendships after college or marriage. One regular call or meet-up with a friend makes a real difference.</p></div>
+      <div class="stage"><h3>Becoming a father</h3><p class="muted">New fathers can also get depression and anxiety after a baby arrives. Feeling lost, irritable or disconnected is common, and help works.</p></div>
+    </div>
+  </div>
+
+  <div class="panel reading">
+    <h2 style="font-size:1.4rem">How to start the conversation</h2>
+    <p>You don’t need the perfect words. Something short and honest is enough:</p>
+    <p class="script">“I’ve not been myself lately. Can we talk sometime this week?”</p>
+    <p class="script">“Work has been really heavy on my mind. I don’t need advice — I just need to say it out loud.”</p>
+    <p class="script">“I’m struggling more than I’ve let on.”</p>
+    <p>Talking side by side often feels easier than face to face — on a walk, a drive or over chai.</p>
+    <a class="btn ghost" href="#tools" data-scroll="reach-out">Build a message to send</a>
+  </div>
+
+  <div class="panel reading">
+    <h2 style="font-size:1.4rem">If a friend seems off</h2>
+    <ul>
+      <li><strong>Ask directly:</strong> “You’ve seemed stressed. How are you really doing?” Ask twice; the first answer is usually “fine”.</li>
+      <li><strong>Listen more than you advise.</strong> You don’t have to fix it.</li>
+      <li><strong>Ask about suicide if you’re worried.</strong> Asking does not put the idea in someone’s head; it often brings relief.</li>
+      <li><strong>Follow up</strong> a few days later, and help them call <a href="#help">a helpline or doctor</a> if needed.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WOMEN -->
+<section class="view" data-view="women" aria-labelledby="women-title" hidden>
+  <div class="page-head">
+    <h1 id="women-title">For women: for the mind carrying everyone else</h1>
+    <p class="lede">Remembering, planning and worrying for the whole family is real work, even when nobody sees it. Add hormones, a job and caring for others, and exhaustion makes sense. You deserve support too.</p>
+    <p class="muted small-text">These pages are for anyone. Read whatever fits you.</p>
+  </div>
+
+  <div class="panel">
+    <h2 style="font-size:1.4rem">Make your mental load visible</h2>
+    <p class="muted">Tick everything you usually keep track of or end up doing. Then share the list with your partner or family to split it fairly.</p>
+    <ul class="load-list" id="load-list"></ul>
+    <p class="load-count" id="load-count" aria-live="polite"></p>
+    <div class="row">
+      <button class="btn" type="button" id="load-copy">Copy list to share</button>
+      <a class="btn ghost" id="load-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+      <button class="icon-btn" type="button" id="load-reset">Clear ticks</button>
+    </div>
+    <p class="form-msg ok" id="load-msg" role="status" aria-live="polite"></p>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Mood across life stages</h2>
+      <div class="stage"><h3>Periods</h3><p class="muted">Mild mood changes before a period are common. If the week before your period brings severe sadness, anger or anxiety that affects work or relationships (sometimes called PMDD), a doctor can help.</p></div>
+      <div class="stage"><h3>After having a baby</h3><p class="muted">“Baby blues” — tearfulness and mood swings — are common in the first two weeks and usually pass. If low mood, anxiety or feeling disconnected from the baby lasts longer or is severe, it may be postpartum depression. It is common, it is not your fault, and it is treatable. Talk to your doctor.</p></div>
+      <div class="stage"><h3>Perimenopause and menopause</h3><p class="muted">Changing hormones in your 40s and 50s can affect mood, sleep and anxiety. Mention mood symptoms to your doctor, not only physical ones.</p></div>
+    </div>
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Burnout and caregiving</h2>
+      <p class="muted">Signs include feeling empty, snapping at people you love, and resting without feeling rested. Caring for children, elders or a sick family member while working is a heavy load.</p>
+      <ul>
+        <li>Name one task you can hand over this week.</li>
+        <li>Protect one small, regular time that is only yours.</li>
+        <li>Say no to one thing without explaining at length.</li>
+        <li>Tell one person how you are actually doing.</li>
+      </ul>
+      <div class="note alert">
+        <strong>If someone at home is hurting or threatening you,</strong> it is not your fault. Call the Women Helpline <a href="tel:181">181</a>, or <a href="tel:112">112</a> in an emergency.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel reading">
+    <h2 style="font-size:1.4rem">Asking for help</h2>
+    <p class="script">“I can’t keep track of everything alone. Can we sit down this weekend and split things up?”</p>
+    <p class="script">“I’m more tired than I’ve been letting on, and I think I need to talk to someone.”</p>
+    <a class="btn ghost" href="#tools" data-scroll="reach-out">Build a message to send</a>
+  </div>
+</section>
+
+<!-- HELP -->
+<section class="view" data-view="help" aria-labelledby="help-title" hidden>
+  <div class="page-head">
+    <h1 id="help-title">Get help</h1>
+    <p class="lede">Reaching out is a strong thing to do. These services in India are free.</p>
+  </div>
+  <div class="lines">
+    <div class="line-card urgent">
+      <strong>Emergency</strong>
+      <a class="num" href="tel:112">112</a>
+      <p class="muted small-text">If you or someone else is in immediate danger.</p>
+    </div>
+    <div class="line-card">
+      <strong>Tele-MANAS (Government of India)</strong>
+      <a class="num" href="tel:14416">14416</a>
+      <p class="muted small-text">Free, 24/7 mental health support. You can choose your language. Also reachable on <a href="tel:18008914416">1-800-891-4416</a>.</p>
+    </div>
+    <div class="line-card">
+      <strong>Women Helpline</strong>
+      <a class="num" href="tel:181">181</a>
+      <p class="muted small-text">For women facing violence or abuse at home or elsewhere.</p>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Get help immediately if</h2>
+      <ul>
+        <li>You are thinking about ending your life or have a plan</li>
+        <li>You have hurt yourself or might hurt someone else</li>
+        <li>Someone is hearing or seeing things others don’t, or is very confused</li>
+        <li>Someone has stopped eating, drinking or getting out of bed for days</li>
+      </ul>
+      <p>Call <a href="tel:112">112</a> or go to the nearest hospital emergency department. Stay with the person if it is safe.</p>
+    </div>
+    <div class="panel">
+      <h2 style="font-size:1.4rem">Finding regular support</h2>
+      <ul>
+        <li><strong>Counsellor or psychologist:</strong> talking therapy for stress, low mood, anxiety and relationships.</li>
+        <li><strong>Psychiatrist:</strong> a medical doctor who can diagnose and prescribe medicine when needed.</li>
+        <li><strong>Government hospitals</strong> have psychiatry departments, and many districts run mental health clinics under the District Mental Health Programme.</li>
+        <li><strong>Your family doctor</strong> is a good first step and can refer you.</li>
+      </ul>
+      <p class="muted small-text">On your first call you can simply say: “I’ve been feeling low and anxious for a few weeks and I’d like to talk to someone.”</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>Manam offers general information and self-help tools. It does not diagnose, treat or replace professional care. In an emergency call 112. For free mental health support anytime, call Tele-MANAS on 14416.</p>
+  </div>
+</footer>
+
+<dialog id="help-dialog" aria-labelledby="dlg-title">
+  <div class="dlg">
+    <h2 id="dlg-title">You don’t have to go through this alone</h2>
+    <p>If you are thinking about ending your life or you are not safe right now, please contact someone now.</p>
+    <ul class="call-list">
+      <li><a class="first" href="tel:112"><span>Emergency, if you are in danger</span><strong>112</strong></a></li>
+      <li><a href="tel:14416"><span>Tele-MANAS: free, 24/7, talk to a counsellor</span><strong>14416</strong></a></li>
+      <li><a href="tel:181"><span>Women Helpline</span><strong>181</strong></a></li>
+    </ul>
+    <p class="muted small-text">If you can, tell someone near you how you feel and stay with them. Move away from anything you could use to hurt yourself.</p>
+    <div class="row">
+      <button class="btn" type="button" data-close-help>Close</button>
+      <a class="btn ghost" href="#help" data-close-help>More help options</a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- storage ---------- */
+  const KEYS = { checkins: "manam.checkins", results: "manam.results", reframes: "manam.reframes", load: "manam.load", chat: "manam.chat" };
+  const store = {
+    get(key, fallback) {
+      try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; }
+    },
+    set(key, value) {
+      try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; }
+    },
+    remove(key) { try { localStorage.removeItem(key); } catch (e) { /* ignore */ } }
+  };
+
+  const $ = (sel, root) => (root || document).querySelector(sel);
+  const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
+  const el = (tag, attrs, children) => {
+    const node = document.createElement(tag);
+    if (attrs) Object.entries(attrs).forEach(([k, v]) => {
+      if (k === "text") node.textContent = v;
+      else if (k === "class") node.className = v;
+      else node.setAttribute(k, v);
+    });
+    (children || []).forEach(c => node.append(c));
+    return node;
+  };
+  const todayKey = () => {
+    const d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  };
+  const fmtDate = key => {
+    const [y, m, d] = key.split("-").map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+  };
+  const flash = (node, text, kind) => {
+    node.textContent = text;
+    node.className = "form-msg " + (kind || "ok");
+    clearTimeout(node._t);
+    node._t = setTimeout(() => { node.textContent = ""; }, 4000);
+  };
+  async function copyText(text, fallbackArea) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (e) {
+      try {
+        fallbackArea.value = text;
+        fallbackArea.classList.remove("sr-only");
+        fallbackArea.select();
+        const ok = document.execCommand && document.execCommand("copy");
+        fallbackArea.classList.add("sr-only");
+        return !!ok;
+      } catch (e2) { return false; }
+    }
+  }
+  const waLink = text => "https://wa.me/?text=" + encodeURIComponent(text);
+
+  /* ---------- help dialog ---------- */
+  const dialog = $("#help-dialog");
+  function openHelp() {
+    if (typeof dialog.showModal === "function") { if (!dialog.open) dialog.showModal(); }
+    else location.hash = "#help";
+  }
+  $$("[data-open-help]").forEach(b => b.addEventListener("click", openHelp));
+  $$("[data-close-help]").forEach(b => b.addEventListener("click", () => dialog.close && dialog.close()));
+  dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
+
+  /* ---------- router ---------- */
+  const VIEWS = ["home", "talk", "checkin", "selfcheck", "tools", "men", "women", "help"];
+  let pendingScroll = null;
+  function route() {
+    const name = (location.hash || "").replace("#", "");
+    const view = VIEWS.includes(name) ? name : "home";
+    $$(".view").forEach(v => { v.hidden = v.dataset.view !== view; });
+    $$(".nav a").forEach(a => {
+      if (a.getAttribute("href") === "#" + view) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    const active = $(".nav a[aria-current]");
+    if (active && active.scrollIntoView) active.scrollIntoView({ block: "nearest", inline: "nearest" });
+    if (pendingScroll) {
+      const target = document.getElementById(pendingScroll);
+      pendingScroll = null;
+      if (target) { setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 30); return; }
+    }
+    window.scrollTo(0, 0);
+    if (view === "checkin") renderCheckins();
+    if (view === "talk") { scrollLog(); }
+  }
+  $$("[data-scroll]").forEach(a => a.addEventListener("click", () => { pendingScroll = a.dataset.scroll; }));
+  window.addEventListener("hashchange", route);
+
+  /* ---------- check-in ---------- */
+  const MOODS = ["Very low", "Low", "Okay", "Good", "Great"];
+  const ENERGY = ["Drained", "Low", "Steady", "Good", "High"];
+  const TAGS = ["Work", "Studies", "Money", "Family", "Partner", "Health", "Loneliness", "Sleep", "Children", "Future"];
+  function radioChoices(container, name, labels) {
+    labels.forEach((label, i) => {
+      const id = name + "-" + (i + 1);
+      container.append(el("label", { class: "choice", for: id }, [
+        el("input", { type: "radio", name, id, value: String(i + 1) }),
+        el("span", { text: label })
+      ]));
+    });
+  }
+  radioChoices($("#mood-choices"), "mood", MOODS);
+  radioChoices($("#energy-choices"), "energy", ENERGY);
+  TAGS.forEach(t => {
+    const id = "tag-" + t.toLowerCase();
+    $("#tag-choices").append(el("label", { class: "choice", for: id }, [
+      el("input", { type: "checkbox", name: "tags", id, value: t }),
+      el("span", { text: t })
+    ]));
+  });
+
+  function getCheckins() {
+    const list = store.get(KEYS.checkins, []);
+    return Array.isArray(list) ? list.filter(c => c && c.date && c.mood) : [];
+  }
+  function loadToday() {
+    const today = getCheckins().find(c => c.date === todayKey());
+    if (!today) return;
+    const m = $("#mood-" + today.mood); if (m) m.checked = true;
+    const e = $("#energy-" + today.energy); if (e) e.checked = true;
+    $("#sleep").value = today.sleep ?? "";
+    $$("#tag-choices input").forEach(i => { i.checked = (today.tags || []).includes(i.value); });
+    $("#note").value = today.note || "";
+  }
+
+  $("#checkin-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const msg = $("#checkin-msg");
+    const mood = $("input[name=mood]:checked");
+    if (!mood) { flash(msg, "Pick how your mood is today to save.", "err"); return; }
+    const energy = $("input[name=energy]:checked");
+    const sleepRaw = $("#sleep").value.trim();
+    const sleep = sleepRaw === "" ? null : Math.min(24, Math.max(0, Number(sleepRaw)));
+    const entry = {
+      date: todayKey(),
+      mood: Number(mood.value),
+      energy: energy ? Number(energy.value) : null,
+      sleep: Number.isFinite(sleep) ? sleep : null,
+      tags: $$("#tag-choices input:checked").map(i => i.value),
+      note: $("#note").value.trim().slice(0, 1000)
+    };
+    const list = getCheckins().filter(c => c.date !== entry.date);
+    list.push(entry);
+    list.sort((a, b) => a.date.localeCompare(b.date));
+    if (store.set(KEYS.checkins, list.slice(-365))) flash(msg, "Saved. Thank you for checking in.", "ok");
+    else flash(msg, "Couldn’t save. Your browser may be blocking storage for this page.", "err");
+    renderCheckins();
+  });
+
+  function renderChart(list) {
+    const box = $("#mood-chart");
+    box.innerHTML = "";
+    const days = [];
+    const now = new Date();
+    for (let i = 13; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+      days.push(d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"));
+    }
+    const byDate = Object.fromEntries(list.map(c => [c.date, c]));
+    if (!days.some(d => byDate[d])) {
+      box.append(el("p", { class: "muted", text: "Your mood line will appear here after your first check-in." }));
+      return;
+    }
+    const W = 560, H = 200, L = 70, R = 12, T = 12, B = 30;
+    const x = i => L + (i * (W - L - R)) / 13;
+    const y = m => T + ((5 - m) * (H - T - B)) / 4;
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.setAttribute("class", "chart");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Mood over the last 14 days");
+    svg.style.minWidth = "420px";
+    const add = (tag, attrs, text) => {
+      const n = document.createElementNS(ns, tag);
+      Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+      if (text) n.textContent = text;
+      svg.append(n);
+      return n;
+    };
+    for (let m = 1; m <= 5; m++) {
+      add("line", { x1: L, x2: W - R, y1: y(m), y2: y(m), stroke: "var(--line)", "stroke-width": 1 });
+      add("text", { x: L - 8, y: y(m) + 4, "text-anchor": "end" }, MOODS[m - 1]);
+    }
+    days.forEach((d, i) => {
+      if ((i % 2 === 1 || i === 12) && i !== 13) return;
+      add("text", { x: x(i), y: H - 8, "text-anchor": "middle" }, i === 13 ? "Today" : fmtDate(d));
+    });
+    let seg = [];
+    const flush = () => {
+      if (seg.length > 1) add("polyline", { points: seg.join(" "), fill: "none", stroke: "var(--accent)", "stroke-width": 3, "stroke-linejoin": "round", "stroke-linecap": "round" });
+      seg = [];
+    };
+    days.forEach((d, i) => {
+      const c = byDate[d];
+      if (c) seg.push(x(i) + "," + y(c.mood)); else flush();
+    });
+    flush();
+    days.forEach((d, i) => {
+      const c = byDate[d];
+      if (c) {
+        const dot = add("circle", { cx: x(i), cy: y(c.mood), r: 5.5, fill: "var(--surface)", stroke: "var(--accent)", "stroke-width": 3 });
+        const t = document.createElementNS(ns, "title");
+        t.textContent = fmtDate(d) + ": " + MOODS[c.mood - 1];
+        dot.append(t);
+      }
+    });
+    box.append(svg);
+  }
+
+  function renderCheckins() {
+    const list = getCheckins();
+    renderChart(list);
+    const alertBox = $("#low-alert");
+    alertBox.innerHTML = "";
+    const last3 = list.slice(-3);
+    if (last3.length === 3 && last3.every(c => c.mood <= 2)) {
+      alertBox.append(el("div", { class: "note" }, [
+        el("strong", { text: "Your last few check-ins have been low. " }),
+        document.createTextNode("That sounds hard. It may help to talk to someone you trust or a counsellor. "),
+        el("a", { href: "#help", text: "See free support options" })
+      ]));
+    }
+    const ul = $("#entries");
+    ul.innerHTML = "";
+    const recent = list.slice(-10).reverse();
+    if (!recent.length) {
+      ul.append(el("li", {}, [el("span", { class: "muted", text: "No check-ins yet. Your entries will show here." })]));
+      return;
+    }
+    recent.forEach(c => {
+      const parts = ["Mood: " + MOODS[c.mood - 1]];
+      if (c.energy) parts.push("Energy: " + ENERGY[c.energy - 1]);
+      if (c.sleep !== null && c.sleep !== undefined) parts.push("Sleep: " + c.sleep + " h");
+      const what = el("div", { class: "what" }, [el("div", { text: parts.join(", ") })]);
+      if (c.tags && c.tags.length) what.append(el("div", {}, c.tags.map(t => el("span", { class: "tag", text: t }))));
+      if (c.note) what.append(el("div", { class: "muted small-text", text: c.note }));
+      const del = el("button", { class: "icon-btn", type: "button", text: "Delete" });
+      del.setAttribute("aria-label", "Delete check-in from " + fmtDate(c.date));
+      del.addEventListener("click", () => {
+        store.set(KEYS.checkins, getCheckins().filter(x => x.date !== c.date));
+        renderCheckins();
+      });
+      ul.append(el("li", {}, [el("span", { class: "when", text: c.date === todayKey() ? "Today" : fmtDate(c.date) }), what, del]));
+    });
+  }
+
+  const delBtn = $("#delete-all");
+  let delArmed = false;
+  delBtn.addEventListener("click", () => {
+    if (!delArmed) {
+      delArmed = true;
+      delBtn.textContent = "Tap again to delete everything";
+      setTimeout(() => { delArmed = false; delBtn.textContent = "Delete all my data"; }, 5000);
+      return;
+    }
+    Object.values(KEYS).forEach(k => store.remove(k));
+    delArmed = false;
+    delBtn.textContent = "Delete all my data";
+    $("#checkin-form").reset();
+    renderCheckins(); renderHistory(); renderReframes(); renderLoad(); resetChat();
+    flash($("#delete-msg"), "All your data has been deleted from this device.", "ok");
+  });
+
+  /* ---------- self-check ---------- */
+  const OPTIONS = ["Not at all", "Several days", "More than half the days", "Nearly every day"];
+  const TESTS = {
+    phq9: {
+      name: "PHQ-9 (low mood)",
+      max: 27,
+      items: [
+        "Little interest or pleasure in doing things",
+        "Feeling down, depressed, or hopeless",
+        "Trouble falling or staying asleep, or sleeping too much",
+        "Feeling tired or having little energy",
+        "Poor appetite or overeating",
+        "Feeling bad about yourself — or that you are a failure or have let yourself or your family down",
+        "Trouble concentrating on things, such as reading the newspaper or watching television",
+        "Moving or speaking so slowly that other people could have noticed — or the opposite, being so fidgety or restless that you have been moving around a lot more than usual",
+        "Thoughts that you would be better off dead, or of hurting yourself in some way"
+      ],
+      bands: [[0, 4, "Minimal"], [5, 9, "Mild"], [10, 14, "Moderate"], [15, 19, "Moderately severe"], [20, 27, "Severe"]]
+    },
+    gad7: {
+      name: "GAD-7 (anxiety)",
+      max: 21,
+      items: [
+        "Feeling nervous, anxious, or on edge",
+        "Not being able to stop or control worrying",
+        "Worrying too much about different things",
+        "Trouble relaxing",
+        "Being so restless that it is hard to sit still",
+        "Becoming easily annoyed or irritable",
+        "Feeling afraid, as if something awful might happen"
+      ],
+      bands: [[0, 4, "Minimal"], [5, 9, "Mild"], [10, 14, "Moderate"], [15, 21, "Severe"]]
+    }
+  };
+  const ADVICE = {
+    Minimal: "Your answers suggest few symptoms right now. Keep doing what helps you, and check in again in two weeks or whenever things change.",
+    Mild: "Your answers suggest mild symptoms. Try the calm tools, keep up sleep and movement, and talk to someone you trust. If it doesn’t ease in two weeks, talk to a doctor or counsellor.",
+    Moderate: "Your answers suggest moderate symptoms. It’s a good idea to talk to a doctor or counsellor. You can call Tele-MANAS on 14416 for free, any time, to talk about next steps.",
+    "Moderately severe": "Your answers suggest fairly strong symptoms. Please talk to a doctor or mental health professional soon. Tele-MANAS (14416) is free and open 24/7.",
+    Severe: "Your answers suggest strong symptoms. Please talk to a doctor or mental health professional soon. Tele-MANAS (14416) is free and open 24/7, and can help you find care."
+  };
+  let currentTest = "phq9";
+
+  function renderQuestions() {
+    const t = TESTS[currentTest];
+    const box = $("#sc-questions");
+    box.innerHTML = "";
+    t.items.forEach((text, i) => {
+      const name = currentTest + "-q" + i;
+      const fs = el("fieldset", { class: "q" });
+      const legend = el("legend", { class: "sr-only", text: (i + 1) + ". " + text });
+      const p = el("p", {}, [el("span", { class: "num", text: (i + 1) + "." }), document.createTextNode(text)]);
+      p.setAttribute("aria-hidden", "true");
+      const row = el("div", { class: "choice-row" });
+      OPTIONS.forEach((label, v) => {
+        const id = name + "-" + v;
+        row.append(el("label", { class: "choice", for: id }, [
+          el("input", { type: "radio", name, id, value: String(v) }),
+          el("span", { text: label })
+        ]));
+      });
+      fs.append(legend, p, row);
+      box.append(fs);
+    });
+    $("#sc-msg").textContent = "";
+    $("#sc-result").hidden = true;
+  }
+
+  $$(".tabs button").forEach(b => b.addEventListener("click", () => {
+    currentTest = b.dataset.test;
+    $$(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
+    renderQuestions();
+  }));
+  $("#sc-panel").addEventListener("reset", () => setTimeout(() => {
+    $$(".q").forEach(q => q.classList.remove("missing"));
+    $("#sc-msg").textContent = "";
+    $("#sc-result").hidden = true;
+  }, 0));
+
+  $("#sc-panel").addEventListener("submit", e => {
+    e.preventDefault();
+    const t = TESTS[currentTest];
+    const answers = t.items.map((_, i) => {
+      const c = $("input[name='" + currentTest + "-q" + i + "']:checked");
+      return c ? Number(c.value) : null;
+    });
+    const qs = $$(".q");
+    qs.forEach((q, i) => q.classList.toggle("missing", answers[i] === null));
+    const missing = answers.filter(a => a === null).length;
+    if (missing) {
+      $("#sc-msg").textContent = "Answer all " + t.items.length + " questions to see your result. " + missing + " still unanswered.";
+      const first = qs.find(q => q.classList.contains("missing"));
+      if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    $("#sc-msg").textContent = "";
+    const score = answers.reduce((a, b) => a + b, 0);
+    const band = t.bands.find(([lo, hi]) => score >= lo && score <= hi)[2];
+    const selfHarm = currentTest === "phq9" && answers[8] > 0;
+    showResult(t, score, band, selfHarm);
+  });
+
+  function showResult(t, score, band, selfHarm) {
+    const box = $("#sc-result");
+    box.innerHTML = "";
+    if (selfHarm) {
+      box.append(el("div", { class: "note alert" }, [
+        el("strong", { text: "You said you’ve had thoughts of being better off dead or hurting yourself. " }),
+        document.createTextNode("Thank you for being honest. Please talk to someone today. Call Tele-MANAS on "),
+        el("a", { href: "tel:14416", text: "14416" }),
+        document.createTextNode(" (free, 24/7), or "),
+        el("a", { href: "tel:112", text: "112" }),
+        document.createTextNode(" if you might act on these thoughts.")
+      ]));
+    }
+    box.append(
+      el("p", { class: "muted", text: t.name }),
+      el("div", { class: "score-big", text: score + " / " + t.max }),
+      el("p", {}, [el("strong", { text: band + " symptoms" })])
+    );
+    const meter = el("div", { class: "meter" }, [el("i")]);
+    meter.firstChild.style.width = Math.round((score / t.max) * 100) + "%";
+    box.append(meter, el("p", { text: ADVICE[band] }));
+    box.append(el("p", { class: "muted small-text", text: "This is a screening result, not a diagnosis. Only a qualified professional can diagnose." }));
+    const save = el("button", { class: "btn small", type: "button", text: "Save this result" });
+    const msg = el("p", { class: "form-msg", role: "status" });
+    save.addEventListener("click", () => {
+      const list = store.get(KEYS.results, []);
+      list.push({ date: todayKey(), test: currentTest, score, band });
+      if (store.set(KEYS.results, list.slice(-100))) { flash(msg, "Saved.", "ok"); save.disabled = true; renderHistory(); }
+      else flash(msg, "Couldn’t save. Your browser may be blocking storage for this page.", "err");
+    });
+    box.append(el("div", { class: "row" }, [save, el("a", { class: "btn ghost small", href: "#help", text: "See support options" })]), msg);
+    box.hidden = false;
+    box.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function renderHistory() {
+    const ul = $("#sc-history");
+    ul.innerHTML = "";
+    const list = store.get(KEYS.results, []);
+    if (!Array.isArray(list) || !list.length) {
+      ul.append(el("li", {}, [el("span", { class: "muted", text: "Save a result to track how it changes over time." })]));
+      return;
+    }
+    list.slice().reverse().slice(0, 12).forEach((r, idx) => {
+      const t = TESTS[r.test];
+      if (!t) return;
+      const del = el("button", { class: "icon-btn", type: "button", text: "Delete" });
+      del.addEventListener("click", () => {
+        const all = store.get(KEYS.results, []);
+        all.splice(all.length - 1 - idx, 1);
+        store.set(KEYS.results, all);
+        renderHistory();
+      });
+      ul.append(el("li", {}, [
+        el("span", { class: "when", text: fmtDate(r.date) }),
+        el("div", { class: "what", text: t.name + ": " + r.score + " / " + t.max + " (" + r.band + ")" }),
+        del
+      ]));
+    });
+  }
+
+  /* ---------- box breathing ---------- */
+  const PHASES = [["Breathe in", 1], ["Hold", 1], ["Breathe out", 0.6], ["Hold", 0.6]];
+  const circle = $("#box-circle"), phaseEl = $("#box-phase"), countEl = $("#box-count"), roundsEl = $("#box-rounds"), boxBtn = $("#box-toggle");
+  let boxTimer = null, phaseIdx = 0, secs = 4, rounds = 0;
+  function setPhase() {
+    phaseEl.textContent = PHASES[phaseIdx][0];
+    circle.style.transform = "scale(" + PHASES[phaseIdx][1] + ")";
+    secs = 4;
+    countEl.textContent = secs;
+  }
+  function tick() {
+    secs -= 1;
+    if (secs <= 0) {
+      phaseIdx = (phaseIdx + 1) % 4;
+      if (phaseIdx === 0) { rounds += 1; roundsEl.textContent = rounds + (rounds === 1 ? " round" : " rounds"); }
+      setPhase();
+    } else countEl.textContent = secs;
+  }
+  function stopBox() {
+    clearInterval(boxTimer); boxTimer = null;
+    boxBtn.textContent = "Start breathing";
+    phaseEl.textContent = "Ready"; countEl.textContent = "4";
+    circle.style.transform = "scale(.6)";
+  }
+  boxBtn.addEventListener("click", () => {
+    if (boxTimer) { stopBox(); return; }
+    phaseIdx = 0; rounds = 0; roundsEl.textContent = "0 rounds";
+    setPhase();
+    boxBtn.textContent = "Stop";
+    boxTimer = setInterval(tick, 1000);
+  });
+  window.addEventListener("hashchange", () => { if (boxTimer && location.hash !== "#tools") stopBox(); });
+
+  /* ---------- grounding ---------- */
+  const GROUND = [
+    ["Notice 5 things you can see.", "Look around slowly. Name them in your head: a cup, a window, a shadow…"],
+    ["Notice 4 things you can feel.", "Your feet on the floor, your clothes, the chair, the air on your skin."],
+    ["Notice 3 things you can hear.", "Traffic, a fan, your own breathing. Near sounds and far ones."],
+    ["Notice 2 things you can smell.", "If nothing stands out, remember two smells you like."],
+    ["Notice 1 thing you can taste.", "Or take a sip of water and notice it."],
+    ["You’re here, right now.", "Take one slow breath. Repeat from the start if you need to."]
+  ];
+  let gIdx = 0;
+  const dots = $("#ground-dots");
+  GROUND.forEach(() => dots.append(el("i")));
+  function renderGround() {
+    $("#ground-step").textContent = GROUND[gIdx][0];
+    $("#ground-help").textContent = GROUND[gIdx][1];
+    $$("#ground-dots i").forEach((d, i) => d.classList.toggle("on", i <= gIdx));
+    $("#ground-back").disabled = gIdx === 0;
+    $("#ground-next").textContent = gIdx === GROUND.length - 1 ? "Start again" : "Next";
+  }
+  $("#ground-next").addEventListener("click", () => { gIdx = gIdx === GROUND.length - 1 ? 0 : gIdx + 1; renderGround(); });
+  $("#ground-back").addEventListener("click", () => { if (gIdx > 0) { gIdx -= 1; renderGround(); } });
+
+  /* ---------- thought reframe ---------- */
+  const rfFeeling = $("#rf-feeling");
+  rfFeeling.addEventListener("input", () => { $("#rf-feeling-val").textContent = rfFeeling.value + " / 100"; });
+  $("#reframe-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const msg = $("#rf-msg");
+    const entry = {
+      date: todayKey(),
+      situation: $("#rf-situation").value.trim(),
+      thought: $("#rf-thought").value.trim(),
+      feeling: Number(rfFeeling.value),
+      for: $("#rf-for").value.trim(),
+      against: $("#rf-against").value.trim(),
+      balanced: $("#rf-balanced").value.trim()
+    };
+    if (!entry.thought) { flash(msg, "Write the thought that went through your mind to save.", "err"); return; }
+    const list = store.get(KEYS.reframes, []);
+    list.push(entry);
+    if (store.set(KEYS.reframes, list.slice(-50))) {
+      flash(msg, "Worksheet saved.", "ok");
+      $("#reframe-form").reset();
+      $("#rf-feeling-val").textContent = "50 / 100";
+      renderReframes();
+    } else flash(msg, "Couldn’t save. Your browser may be blocking storage for this page.", "err");
+  });
+  function renderReframes() {
+    const ul = $("#rf-list");
+    ul.innerHTML = "";
+    const list = store.get(KEYS.reframes, []);
+    if (!Array.isArray(list) || !list.length) {
+      ul.append(el("li", {}, [el("span", { class: "muted", text: "Saved worksheets appear here." })]));
+      return;
+    }
+    list.slice().reverse().slice(0, 8).forEach((r, idx) => {
+      const what = el("div", { class: "what" }, [
+        el("div", {}, [el("strong", { text: "Thought: " }), document.createTextNode(r.thought)])
+      ]);
+      if (r.balanced) what.append(el("div", {}, [el("strong", { text: "Balanced: " }), document.createTextNode(r.balanced)]));
+      const del = el("button", { class: "icon-btn", type: "button", text: "Delete" });
+      del.addEventListener("click", () => {
+        const all = store.get(KEYS.reframes, []);
+        all.splice(all.length - 1 - idx, 1);
+        store.set(KEYS.reframes, all);
+        renderReframes();
+      });
+      ul.append(el("li", {}, [el("span", { class: "when", text: fmtDate(r.date) }), what, del]));
+    });
+  }
+
+  /* ---------- reach out ---------- */
+  const NEEDS = {
+    talk: "Can we talk?",
+    hard: "I’m having a hard time",
+    help: "I need help",
+    company: "I just need company"
+  };
+  const MESSAGES = {
+    talk: who => `Hi${who}, I’ve had a lot on my mind lately. Are you free to talk sometime this week? Even a short call would help.`,
+    hard: who => `Hi${who}, I haven’t been doing too well recently and I didn’t want to keep it to myself. I’m not expecting you to fix anything — I’d just like to talk.`,
+    help: who => `Hi${who}, I’m struggling and I think I need some help. Could you call me or meet me today?`,
+    company: who => `Hi${who}, I’m feeling low and don’t want to be alone right now. Could we meet up or just be on a call for a bit?`
+  };
+  const WHO = { friend: "", partner: "", family: "", colleague: "" };
+  Object.entries(NEEDS).forEach(([key, label], i) => {
+    const id = "need-" + key;
+    $("#ro-need").append(el("label", { class: "choice", for: id }, [
+      el("input", Object.assign({ type: "radio", name: "need", id, value: key }, i === 0 ? { checked: "" } : {})),
+      el("span", { text: label })
+    ]));
+  });
+  function buildMessage() {
+    const need = ($("input[name=need]:checked") || {}).value || "talk";
+    let text = MESSAGES[need](WHO[$("#ro-who").value] || "");
+    if ($("#ro-who").value === "colleague" && need === "company") {
+      text = "Hi, I’m having a rough day. Could we take a short break together sometime today?";
+    }
+    $("#ro-out").textContent = text;
+    $("#ro-wa").href = waLink(text);
+    return text;
+  }
+  $("#ro-who").addEventListener("change", buildMessage);
+  $("#ro-need").addEventListener("change", buildMessage);
+  $("#ro-copy").addEventListener("click", async () => {
+    const ok = await copyText(buildMessage(), $("#ro-fallback"));
+    flash($("#ro-msg"), ok ? "Message copied. Paste it into WhatsApp, SMS or any app." : "Select the message above and copy it.", ok ? "ok" : "err");
+  });
+
+  /* ---------- mental load ---------- */
+  const LOAD = [
+    "Planning meals and groceries", "Remembering birthdays and functions", "Children’s school, homework and fees",
+    "Doctor visits and medicines", "Paying bills and EMIs on time", "Cleaning and laundry",
+    "Caring for elders", "Noticing when things run out", "Arranging repairs and services",
+    "Keeping in touch with relatives", "Planning holidays and travel", "Buying gifts",
+    "Managing house help or staff", "Pet care", "Children’s activities and clothes", "Keeping important documents in order"
+  ];
+  const loadList = $("#load-list");
+  LOAD.forEach((task, i) => {
+    const id = "load-" + i;
+    loadList.append(el("li", {}, [el("label", { for: id }, [
+      el("input", { type: "checkbox", id, value: task }),
+      el("span", { text: task })
+    ])]));
+  });
+  function loadText() {
+    const ticked = $$("#load-list input:checked").map(i => i.value);
+    if (!ticked.length) return "";
+    return "Things I usually keep track of or do at home:\n" + ticked.map(t => "• " + t).join("\n") +
+      "\n\nCan we sit down together and decide which of these you can take over?";
+  }
+  function renderLoad() {
+    const saved = store.get(KEYS.load, []);
+    $$("#load-list input").forEach(i => { i.checked = Array.isArray(saved) && saved.includes(i.value); });
+    updateLoadCount();
+  }
+  function updateLoadCount() {
+    const n = $$("#load-list input:checked").length;
+    $("#load-count").textContent = n ? "You’re carrying " + n + " of " + LOAD.length + " of these." : "Tick the tasks you usually handle.";
+    const text = loadText();
+    $("#load-wa").href = text ? waLink(text) : "#";
+    $("#load-wa").setAttribute("aria-disabled", String(!text));
+  }
+  loadList.addEventListener("change", () => {
+    store.set(KEYS.load, $$("#load-list input:checked").map(i => i.value));
+    updateLoadCount();
+  });
+  $("#load-wa").addEventListener("click", e => {
+    if (!loadText()) { e.preventDefault(); flash($("#load-msg"), "Tick at least one task to share.", "err"); }
+  });
+  $("#load-copy").addEventListener("click", async () => {
+    const text = loadText();
+    if (!text) { flash($("#load-msg"), "Tick at least one task to copy.", "err"); return; }
+    const ok = await copyText(text, $("#ro-fallback"));
+    flash($("#load-msg"), ok ? "List copied. Paste it into a message." : "Copying is blocked here. Use Share on WhatsApp instead.", ok ? "ok" : "err");
+  });
+  $("#load-reset").addEventListener("click", () => { store.set(KEYS.load, []); renderLoad(); });
+
+
+  /* ---------- Thunai chat ---------- */
+  const RULES = `You are Thunai (துணை, which means "companion"), a warm, polite support companion inside Manam, a mental wellbeing website for people in India. Men and women come to you to share problems: money and savings goals, loans and debt, losing a job, work pressure, study stress, family and relationship strain, loneliness, anxiety and low mood. Help them feel heard and leave with practical next steps.
+
+How to talk:
+- Reply in the language and style the person uses: English, Tamil, or Tanglish (Tamil written in English letters). In Tamil or Tanglish use the respectful "neenga" form.
+- Begin with one short, sincere sentence acknowledging how they feel. Never dramatic, never preachy.
+- Understand before advising. If important details are missing, ask at most 2 or 3 short questions first and wait. For a savings goal: the target amount, by when, monthly income, fixed monthly expenses, and what they have saved already. For debt: each loan or card, the amount left, the EMI and interest rate if known, and monthly income.
+- When you know enough, give a clear step-by-step plan. Work out real numbers in rupees and show the maths simply, for example: Rs 1,50,000 in 12 months = Rs 12,500 a month, about Rs 410 a day. Use Indian number formatting (1,50,000). Offer 2 or 3 options (for example a longer timeline, specific costs to cut, extra income ideas) and say which is the safest.
+- Finish with one small step they can take today, and at most one gentle question.
+- Keep replies short and easy to read: usually under 180 words. Short paragraphs and simple "-" bullet lines. No headings and no tables.
+
+Money: give general budgeting education that fits India: tracking spending, simple budgets such as 50/30/20, an emergency fund, a separate savings account or recurring deposit for goals, avoiding high-interest debt, the avalanche and snowball methods, asking the lender about restructuring, and never taking a new loan to pay an old one. Do not recommend specific stocks, mutual funds, crypto, apps or lenders. If asked about investing, explain the basics and say you are not a financial advisor. If someone is being harassed by a loan app or recovery agents: it is not their fault, they should not pay extra to stop threats, keep screenshots, and they can report it to the National Cyber Crime Helpline 1930 or cybercrime.gov.in and to the police.
+
+Feelings and mental health: listen first and validate. Offer one simple coping step (slow breathing, grounding, writing the worry down, a short walk, talking to someone they trust) and mention Manam's "Calm tools" or "Self-check" pages when they fit. Never diagnose, never say they have a condition, and never suggest medicines or doses. If problems sound strong or long-lasting (more than two weeks, or affecting sleep, eating, work or relationships), gently encourage seeing a doctor or counsellor and mention Tele-MANAS on 14416 (free, 24/7, many languages).
+
+Safety comes before everything else: if the person mentions suicide, wanting to die, self-harm, being in danger, or someone hurting them, stop problem-solving. Respond with warmth, take it seriously, ask whether they are safe right now, and share: Tele-MANAS 14416 (free, 24/7), emergency 112, and for women facing violence, the Women Helpline 181. Encourage them to reach someone near them now. Never give information that could be used for self-harm.
+
+Never pretend to be human: if asked, say you are an AI companion. Do not shame or judge, do not give legal or medical diagnoses, do not promise outcomes, and do not invent facts. Treat men and women with equal care: many men find it hard to open up, and many women carry a heavy invisible load. Meet each person where they are.
+
+The conversation follows. Reply only as Thunai to the person's latest message.`;
+
+  const GREETING = "Hi, I’m Thunai. Whatever’s on your mind — a goal you’re saving for, loan worries, no job, work pressure, or just a heavy day — you can tell me here. I’ll listen first, and then we’ll work out small steps together.\n\nYou can write in English, Tamil or Tanglish.";
+  const STARTERS = [
+    ["Save for a trip", "I want to go on an international trip next year and I need to save ₹1.5 lakh. How can I do it?"],
+    ["Loans and debt", "I have loans and EMIs and I’m really stressed about paying them back."],
+    ["No job, feeling pressure", "I don’t have a job right now and the pressure is making me anxious."],
+    ["Work stress", "Work pressure is too much and I can’t switch off, even at home."],
+    ["Feeling anxious", "I’ve been feeling anxious and overthinking a lot lately."],
+    ["Feeling low", "I’ve been feeling low and tired for a while now."],
+    ["Family or relationship", "Things are difficult at home and I don’t know how to handle it."],
+    ["Can’t sleep", "I can’t sleep properly because my mind keeps racing."]
+  ];
+  const CRISIS = /(suicid|kill\s*(my\s*self|myself)|end\s*(my|this)\s*life|want\s*to\s*die|wanna\s*die|don'?t\s*want\s*to\s*live|better\s*off\s*dead|self[\s-]*harm|hurt(ing)?\s*myself|cut(ting)?\s*myself|saaga(num|lam|poren|poren)|saaganum|sethu\s*pog|sethuruv|sethuralam|thaarkolai|tharkolai|தற்கொலை|சாகணும்|சாகலாம்|சாக\s*போற|செத்து\s*போ)/i;
+  const MAX_TURNS = 24;
+
+  const chatLog = $("#chat-log"), chatForm = $("#chat-form"), chatInput = $("#chat-input");
+  const sendBtn = $("#chat-send"), stopBtn = $("#chat-stop"), chatOff = $("#chat-off");
+  let turns = loadTurns();
+  let sampleFn = null, samplePending = true, chatDisabled = false, ctl = null, busy = false;
+  const AVATAR_HTML = $(".chat-head .avatar").outerHTML;
+
+  function loadTurns() {
+    const t = store.get(KEYS.chat, []);
+    return Array.isArray(t) ? t.filter(x => x && (x.role === "user" || x.role === "assistant") && typeof x.content === "string" && x.content.trim()) : [];
+  }
+  function saveTurns() { store.set(KEYS.chat, turns.slice(-60)); }
+  function scrollLog() { requestAnimationFrame(() => { chatLog.scrollTop = chatLog.scrollHeight; }); }
+
+  function inline(text) {
+    const frag = document.createDocumentFragment();
+    text.split(/(\*\*[^*]+\*\*)/g).forEach(part => {
+      if (!part) return;
+      if (/^\*\*[^*]+\*\*$/.test(part)) frag.append(el("strong", { text: part.slice(2, -2) }));
+      else frag.append(document.createTextNode(part.replace(/^#{1,6}\s+/, "")));
+    });
+    return frag;
+  }
+  function rich(text) {
+    const frag = document.createDocumentFragment();
+    let list = null, listType = "";
+    text.replace(/\r/g, "").split("\n").forEach(raw => {
+      const line = raw.trim();
+      const bullet = line.match(/^[-*•]\s+(.*)$/);
+      const numbered = line.match(/^(\d+)[.)]\s+(.*)$/);
+      if (bullet || numbered) {
+        const type = bullet ? "ul" : "ol";
+        if (!list || listType !== type) { list = el(type); listType = type; frag.append(list); }
+        list.append(el("li", {}, [inline(bullet ? bullet[1] : numbered[2])]));
+        return;
+      }
+      list = null;
+      if (line) frag.append(el("p", {}, [inline(line)]));
+    });
+    return frag;
+  }
+  function botBubble() {
+    const wrap = el("div", { class: "msg bot" });
+    wrap.innerHTML = AVATAR_HTML;
+    const bubble = el("div", { class: "bubble" });
+    wrap.append(bubble);
+    chatLog.append(wrap);
+    return bubble;
+  }
+  function addBot(text) { botBubble().append(rich(text)); }
+  function addMe(text) { chatLog.append(el("div", { class: "msg me" }, [el("div", { class: "bubble", text })])); }
+  function addCrisis() {
+    const card = el("div", { class: "crisis-card", role: "alert" });
+    card.append(
+      el("strong", { text: "You matter, and you don’t have to face this alone. " }),
+      document.createTextNode("If you might act on thoughts of ending your life or you’re not safe, please call "),
+      el("a", { href: "tel:112", text: "112" }),
+      document.createTextNode(" now. To talk to a trained counsellor for free, any time, call Tele-MANAS on "),
+      el("a", { href: "tel:14416", text: "14416" }),
+      document.createTextNode(".")
+    );
+    chatLog.append(card);
+  }
+  function addStarters() {
+    const box = el("div", { class: "starters", id: "chat-starters" });
+    STARTERS.forEach(([label, prompt]) => {
+      const b = el("button", { type: "button", text: label });
+      b.addEventListener("click", () => send(prompt));
+      box.append(b);
+    });
+    chatLog.append(box);
+  }
+  function renderChat() {
+    chatLog.innerHTML = "";
+    addBot(GREETING);
+    if (!turns.length) addStarters();
+    turns.forEach(t => {
+      if (t.role === "user") { addMe(t.content); if (CRISIS.test(t.content)) addCrisis(); }
+      else addBot(t.content);
+    });
+    scrollLog();
+  }
+  function resetChat() {
+    if (ctl) ctl.abort();
+    turns = [];
+    store.remove(KEYS.chat);
+    renderChat();
+  }
+  $("#chat-clear").addEventListener("click", () => { resetChat(); chatInput.focus(); });
+
+  function setBusy(on) {
+    busy = on;
+    sendBtn.hidden = on;
+    stopBtn.hidden = !on;
+    chatInput.disabled = on || chatDisabled;
+  }
+  function disableChat(message) {
+    chatDisabled = true;
+    chatForm.hidden = true;
+    $("#chat-note").hidden = true;
+    chatOff.hidden = false;
+    chatOff.textContent = message;
+    $("#voice").hidden = true;
+    $(".modes").hidden = true;
+    stopVoice();
+    const s = $("#chat-starters"); if (s) s.remove();
+  }
+  const ERROR_COPY = {
+    rate_limited: "Thunai needs a short break because of usage limits. Please try again in a little while.",
+    session_expired: "Your Claude session has expired. Sign in to Claude again, then send your message.",
+    refused: "Thunai couldn’t reply to that message. Try saying it a different way. If you’re in danger, call 112 or Tele-MANAS 14416.",
+    empty_completion: "Thunai didn’t manage to reply. Try sending your message again.",
+    prompt_too_large: "This conversation has become too long. Start a new conversation to continue.",
+    upstream_error: "The connection dropped before Thunai could finish. Send your message again to retry."
+  };
+  const HIDE_CODES = ["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed"];
+
+  async function send(text, hooks) {
+    hooks = hooks || {};
+    text = (text || "").trim();
+    if (!text || busy || chatDisabled) return;
+    if (samplePending) { sampleFn = await samplePromise; }
+    if (!sampleFn) { disableChat("Thunai replies using Claude, which isn’t available here. Open this page inside Claude to talk with Thunai. You can still use the check-in, self-check and calm tools."); if (hooks.onError) hooks.onError("unavailable", ""); return; }
+    const starters = $("#chat-starters"); if (starters) starters.remove();
+    addMe(text);
+    if (CRISIS.test(text)) addCrisis();
+    turns.push({ role: "user", content: text });
+    saveTurns();
+    chatInput.value = ""; autoGrow();
+    const bubble = botBubble();
+    bubble.append(el("span", { class: "typing", "aria-label": "Thunai is typing" }, [el("i"), el("i"), el("i")]));
+    scrollLog();
+    setBusy(true);
+    ctl = new AbortController();
+    const history = turns.slice(-MAX_TURNS);
+    while (history.length && history[0].role !== "user") history.shift();
+    try {
+      const result = await sampleFn([{ role: "user", content: hooks.voice ? RULES + VOICE_NOTE : RULES }, ...history], {
+        cache: false,
+        signal: ctl.signal,
+        modelTier: "default",
+        effort: "low",
+        onText: ({ text: t }) => {
+          if (hooks.onText) hooks.onText(t);
+          bubble.replaceChildren(rich(t));
+          const nearBottom = chatLog.scrollHeight - chatLog.scrollTop - chatLog.clientHeight < 160;
+          if (nearBottom) scrollLog();
+        }
+      });
+      bubble.replaceChildren(rich(result.text));
+      if (result.truncated) bubble.append(el("span", { class: "meta", text: "Reply was cut short. Ask Thunai to continue." }));
+      turns.push({ role: "assistant", content: result.text });
+      saveTurns();
+      if (hooks.onDone) hooks.onDone(result.text, result.truncated);
+    } catch (e) {
+      const code = e && e.code;
+      const partial = e && e.text;
+      if (code === "cancelled") {
+        if (partial) { bubble.replaceChildren(rich(partial)); turns.push({ role: "assistant", content: partial }); saveTurns(); }
+        else bubble.closest(".msg").remove();
+      } else if (HIDE_CODES.includes(code)) {
+        bubble.closest(".msg").remove();
+        disableChat(code === "not_granted"
+          ? "Thunai can’t reply because Claude access wasn’t allowed for this page. Reload the page to be asked again. You can still use the check-in, self-check and calm tools."
+          : "Thunai isn’t available on this account right now. You can still use the check-in, self-check and calm tools.");
+      } else {
+        bubble.replaceChildren();
+        if (partial && code !== "refused") bubble.append(rich(partial));
+        bubble.append(el("span", { class: "meta", text: ERROR_COPY[code] || ERROR_COPY.upstream_error }));
+      }
+      if (hooks.onError) hooks.onError(code, code === "cancelled" ? "" : (HIDE_CODES.includes(code) ? chatOff.textContent : (ERROR_COPY[code] || ERROR_COPY.upstream_error)), partial);
+    } finally {
+      ctl = null;
+      setBusy(false);
+      scrollLog();
+      if (!chatDisabled && location.hash === "#talk" && mode === "type") chatInput.focus();
+    }
+  }
+
+  function autoGrow() {
+    chatInput.style.height = "auto";
+    chatInput.style.height = Math.min(chatInput.scrollHeight + 2, 160) + "px";
+  }
+  chatInput.addEventListener("input", autoGrow);
+  chatInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); send(chatInput.value); }
+  });
+  chatForm.addEventListener("submit", e => { e.preventDefault(); send(chatInput.value); });
+  stopBtn.addEventListener("click", () => { if (ctl) ctl.abort(); });
+
+  const samplePromise = (window.claude && typeof window.claude.use === "function")
+    ? window.claude.use("sample").catch(() => null)
+    : Promise.resolve(null);
+  samplePromise.then(fn => {
+    sampleFn = fn; samplePending = false;
+    if (!fn) disableChat("Thunai replies using Claude, which isn’t available here. Open this page inside Claude to talk with Thunai. You can still use the check-in, self-check and calm tools.");
+  });
+
+
+  /* ---------- voice mode ---------- */
+  const VOICE_NOTE = `
+
+VOICE MODE: The person is talking to you out loud and your reply will be read aloud by a voice. Talk like a kind person on a call: 2 to 4 short sentences, under 70 words. No bullet points, no lists, no symbols like * or #. Write amounts so they sound natural when spoken, for example "twelve thousand five hundred rupees a month". Ask only one question at a time. If the person speaks Tamil, reply in simple spoken Tamil written in Tamil script so a Tamil voice can read it. Otherwise reply in simple English.`;
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+  const synth = ("speechSynthesis" in window) ? window.speechSynthesis : null;
+  const face = $("#face"), vStatus = $("#v-status"), capYou = $("#cap-you"), capBot = $("#cap-bot"), vCrisis = $("#v-crisis");
+  const micBtn = $("#mic"), vLang = $("#v-lang"), vVoice = $("#v-voice"), vSpeak = $("#v-speak"), vAuto = $("#v-auto");
+  let mode = store.get("manam.mode", "talk") === "type" ? "type" : "talk";
+  let rec = null, listening = false, heard = "", micBlocked = false, thinking = false;
+  let spokenIdx = 0, pendingUtter = 0, replyDone = false, voices = [];
+  const IDLE_MSG = SR ? "Tap the microphone and start talking" : "Type below and Thunai will reply out loud. To talk with your voice, open this page in Chrome or Edge.";
+
+  const savedVoice = store.get("manam.voice", {});
+  if (savedVoice.lang) vLang.value = savedVoice.lang;
+  if (savedVoice.speak === false) vSpeak.checked = false;
+  if (savedVoice.auto === false) vAuto.checked = false;
+  function saveVoicePrefs() { store.set("manam.voice", { lang: vLang.value, voice: vVoice.value, speak: vSpeak.checked, auto: vAuto.checked }); }
+
+  function setFace(state) { face.className = "face " + state; }
+  function setStatus(t) { vStatus.textContent = t; }
+  function setMicUI() {
+    micBtn.classList.toggle("on", listening);
+    micBtn.setAttribute("aria-label", listening ? "Stop listening" : (face.classList.contains("speaking") ? "Interrupt and talk" : "Start talking"));
+    micBtn.disabled = thinking;
+  }
+
+  function loadVoices() {
+    if (!synth) return;
+    voices = synth.getVoices();
+    const lang = vLang.value, base = lang.split("-")[0];
+    const match = voices.filter(v => v.lang && v.lang.replace("_", "-").toLowerCase().startsWith(base));
+    const exact = match.filter(v => v.lang.replace("_", "-").toLowerCase() === lang.toLowerCase());
+    const list = (exact.length ? exact.concat(match.filter(v => !exact.includes(v))) : match);
+    vVoice.innerHTML = "";
+    if (!list.length) {
+      vVoice.append(el("option", { value: "", text: base === "ta" ? "No Tamil voice on this device" : "Default voice" }));
+    } else {
+      list.forEach(v => vVoice.append(el("option", { value: v.name, text: v.name + " (" + v.lang + ")" })));
+      if (savedVoice.voice && list.some(v => v.name === savedVoice.voice)) vVoice.value = savedVoice.voice;
+    }
+  }
+  if (synth) {
+    loadVoices();
+    if (typeof synth.addEventListener === "function") synth.addEventListener("voiceschanged", loadVoices);
+    else synth.onvoiceschanged = loadVoices;
+  } else {
+    vSpeak.checked = false; vSpeak.disabled = true;
+    vVoice.append(el("option", { value: "", text: "Speech isn’t supported in this browser" }));
+  }
+  vLang.addEventListener("change", () => { loadVoices(); saveVoicePrefs(); });
+  [vVoice, vSpeak, vAuto].forEach(c => c.addEventListener("change", () => { saveVoicePrefs(); if (!vSpeak.checked && synth) synth.cancel(); }));
+
+  function speechText(t) {
+    return t.replace(/\*\*/g, "").replace(/^[-*•]\s+/gm, "").replace(/^#{1,6}\s+/gm, "").replace(/₹\s?/g, "rupees ").replace(/\s+/g, " ").trim();
+  }
+  function enqueueSpeak(seg) {
+    const text = speechText(seg);
+    if (!text || !synth || !vSpeak.checked) return;
+    const u = new SpeechSynthesisUtterance(text);
+    const v = voices.find(x => x.name === vVoice.value);
+    if (v) { u.voice = v; u.lang = v.lang; } else u.lang = vLang.value;
+    u.rate = 0.96;
+    u.onstart = () => { setFace("speaking"); setStatus("Thunai is speaking… tap the mic to interrupt"); setMicUI(); };
+    const finish = () => { pendingUtter = Math.max(0, pendingUtter - 1); if (pendingUtter === 0 && replyDone) afterReply(); };
+    u.onend = finish;
+    u.onerror = finish;
+    pendingUtter += 1;
+    synth.speak(u);
+  }
+  function speakStreamed(full, final) {
+    const rest = full.slice(spokenIdx);
+    let cut = -1;
+    const re = /[.!?।]["”’)]?\s+|\n+/g;
+    let m;
+    while ((m = re.exec(rest))) cut = m.index + m[0].length;
+    if (final) cut = rest.length;
+    if (cut > 0) { enqueueSpeak(rest.slice(0, cut)); spokenIdx += cut; }
+  }
+  function afterReply() {
+    if (mode !== "talk" || location.hash !== "#talk") { setFace("idle"); return; }
+    setFace("idle");
+    setStatus(IDLE_MSG);
+    setMicUI();
+    if (SR && vAuto.checked && !micBlocked && !chatDisabled) setTimeout(() => { if (!listening && !thinking && mode === "talk" && location.hash === "#talk") startListening(); }, 350);
+  }
+
+  function voiceSend(text) {
+    text = (text || "").trim();
+    if (!text || thinking || busy) return;
+    if (synth) synth.cancel();
+    capYou.textContent = "You: " + text;
+    capBot.replaceChildren();
+    vCrisis.replaceChildren();
+    if (CRISIS.test(text)) {
+      const card = el("div", { class: "crisis-card", role: "alert" });
+      card.append(
+        el("strong", { text: "You matter, and you don’t have to face this alone. " }),
+        document.createTextNode("If you’re not safe, call "), el("a", { href: "tel:112", text: "112" }),
+        document.createTextNode(" now, or talk to a free counsellor any time on Tele-MANAS "), el("a", { href: "tel:14416", text: "14416" }),
+        document.createTextNode(".")
+      );
+      vCrisis.append(card);
+    }
+    thinking = true; spokenIdx = 0; pendingUtter = 0; replyDone = false;
+    setFace("thinking"); setStatus("Thunai is thinking…"); setMicUI();
+    send(text, {
+      voice: true,
+      onText: t => {
+        capBot.replaceChildren(rich(t));
+        $("#captions").scrollTop = $("#captions").scrollHeight;
+        if (thinking) { thinking = false; setMicUI(); }
+        speakStreamed(t, false);
+      },
+      onDone: full => {
+        thinking = false;
+        capBot.replaceChildren(rich(full));
+        speakStreamed(full, true);
+        replyDone = true;
+        setMicUI();
+        if (pendingUtter === 0) afterReply();
+      },
+      onError: (code, message, partial) => {
+        thinking = false;
+        replyDone = true;
+        if (partial) capBot.replaceChildren(rich(partial));
+        setFace("idle");
+        setStatus(message || IDLE_MSG);
+        setMicUI();
+      }
+    });
+  }
+
+  function startListening() {
+    if (!SR || listening || thinking || chatDisabled) return;
+    if (synth) synth.cancel();
+    heard = "";
+    let lastError = "";
+    try {
+      rec = new SR();
+      rec.lang = vLang.value;
+      rec.interimResults = true;
+      rec.continuous = false;
+      rec.maxAlternatives = 1;
+    } catch (e) { setStatus("Voice input isn’t available here. Type below instead."); return; }
+    rec.onstart = () => { listening = true; setFace("listening"); setStatus("Listening… speak now"); capYou.textContent = ""; setMicUI(); };
+    rec.onresult = e => {
+      let interim = "";
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const r = e.results[i];
+        if (r.isFinal) heard += r[0].transcript; else interim += r[0].transcript;
+      }
+      capYou.textContent = "You: " + (heard + " " + interim).trim();
+    };
+    rec.onerror = e => { lastError = e.error || ""; };
+    rec.onend = () => {
+      listening = false;
+      rec = null;
+      const said = heard.trim();
+      if (said) { voiceSend(said); return; }
+      setFace("idle");
+      if (lastError === "not-allowed" || lastError === "service-not-allowed") {
+        micBlocked = true;
+        setStatus("The microphone is blocked here. Allow microphone access for this page, or type below and Thunai will still speak.");
+      } else if (lastError === "no-speech") setStatus("I didn’t catch that. Tap the microphone and try again.");
+      else if (lastError === "network") setStatus("Voice input needs an internet connection. Check it, or type below.");
+      else if (lastError === "audio-capture") setStatus("No microphone was found. Type below instead.");
+      else if (lastError === "language-not-supported") setStatus("This browser can’t listen in that language. Switch the language in Voice settings, or type below.");
+      else setStatus(IDLE_MSG);
+      setMicUI();
+    };
+    try { rec.start(); } catch (e) { listening = false; setStatus("Couldn’t start the microphone. Tap it again, or type below."); setMicUI(); }
+  }
+  function stopVoice() {
+    if (rec) { try { rec.abort(); } catch (e) { /* ignore */ } rec = null; }
+    listening = false;
+    if (synth) synth.cancel();
+    pendingUtter = 0;
+    if (face) { setFace("idle"); setStatus(IDLE_MSG); setMicUI(); }
+  }
+
+  micBtn.addEventListener("click", () => {
+    if (listening) { if (rec) rec.stop(); return; }
+    if (face.classList.contains("speaking") && synth) { synth.cancel(); pendingUtter = 0; replyDone = false; }
+    micBlocked = false;
+    startListening();
+  });
+  if (!SR) micBtn.hidden = true;
+  $("#v-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const box = $("#v-text");
+    const t = box.value;
+    box.value = "";
+    voiceSend(t);
+  });
+
+  function setMode(m) {
+    mode = m;
+    store.set("manam.mode", m);
+    $("#mode-talk").setAttribute("aria-pressed", String(m === "talk"));
+    $("#mode-type").setAttribute("aria-pressed", String(m === "type"));
+    const talk = m === "talk" && !chatDisabled;
+    $("#voice").hidden = !talk;
+    chatLog.hidden = talk;
+    chatForm.hidden = talk || chatDisabled;
+    if (!talk) { stopVoice(); renderChat(); }
+    else {
+      const last = turns.slice().reverse().find(t => t.role === "assistant");
+      capYou.textContent = ""; vCrisis.replaceChildren();
+      capBot.replaceChildren(last ? rich(last.content) : rich("Hi, I’m Thunai. Tap the microphone and tell me what’s on your mind. I’m listening."));
+      setFace("idle"); setStatus(IDLE_MSG); setMicUI();
+    }
+  }
+  $("#mode-talk").addEventListener("click", () => setMode("talk"));
+  $("#mode-type").addEventListener("click", () => setMode("type"));
+  window.addEventListener("hashchange", () => { if (location.hash !== "#talk") stopVoice(); });
+  document.addEventListener("visibilitychange", () => { if (document.hidden) stopVoice(); });
+  $("#chat-clear").addEventListener("click", () => { stopVoice(); capYou.textContent = ""; vCrisis.replaceChildren(); capBot.replaceChildren(rich("Hi, I’m Thunai. Tap the microphone and tell me what’s on your mind. I’m listening.")); });
+
+  /* ---------- start ---------- */
+  renderQuestions();
+  loadToday();
+  renderCheckins();
+  renderHistory();
+  renderReframes();
+  renderGround();
+  buildMessage();
+  renderLoad();
+  renderChat();
+  setMode(mode);
+  route();
+})();
+</script>
+</body>
+</html>
